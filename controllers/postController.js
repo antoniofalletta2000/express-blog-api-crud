@@ -38,7 +38,7 @@ const destroy=(req,res)=>{
         const postDeleted=posts.splice(index,1)
         res.json(postDeleted)
     }else{
-        res.status(204).json({message:"Nessun contenuto"})
+        res.status(404).json({message:"Nessun contenuto"})
     }
 }
 
