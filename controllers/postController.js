@@ -1,7 +1,13 @@
 const posts=require("../data/postsData")
 
 const index= (req, res) => {
-    res.json(posts)
+    let tagData=posts
+    if((req.query.tag).toLowerCase()){
+        tagData=posts.filter(item=>{
+            return item.tags.includes((req.query.tag).toLowerCase())
+        })
+    }
+    res.json(tagData)
 }
 
 const show=(req,res)=>{
