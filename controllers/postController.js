@@ -20,8 +20,22 @@ const show=(req,res)=>{
 }
 
 const store=(req,res)=>{
-    res.json(req.body)
-    console.log(req.body)
+    const newId=posts[posts.length - 1].id + 1
+    const {title, content, image, tags}= req.body
+
+    const newPost={
+        id:newId,
+        title,
+        content,
+        image,
+        tags
+    }
+
+    posts.push(newPost)
+    console.log(posts);
+
+    res.status(201).json(newPost)
+    
 }
 
 const update=(req,res)=>{
