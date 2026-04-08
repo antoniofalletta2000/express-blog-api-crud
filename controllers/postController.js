@@ -39,7 +39,24 @@ const store=(req,res)=>{
 }
 
 const update=(req,res)=>{
-    res.send(`Update post with id ${req.params.id}`)
+    const id= parseInt(res.params.id)
+
+    const post=posts.find(post=>post.id===id)
+
+    if(!post){
+        res.status(404)
+        return res.json({error:"Not found", message:"Post non trovato"})
+    }
+
+    const {title, content, image, tags}=req.body
+
+    post.title=title
+    post.content=content
+    post.image=image
+    post.tags=tags
+
+    res.json(posts)
+
 }
 
 const modify=(req,res)=>{
