@@ -39,7 +39,7 @@ const store=(req,res)=>{
 }
 
 const update=(req,res)=>{
-    const id= parseInt(res.params.id)
+    const id= parseInt(req.params.id)
 
     const post=posts.find(post=>post.id===id)
 
