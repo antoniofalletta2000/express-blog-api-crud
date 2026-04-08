@@ -19,8 +19,9 @@ const show=(req,res)=>{
     }
 }
 
-const post=(req,res)=>{
-    res.send(`Create a new post`)
+const store=(req,res)=>{
+    res.json(req.body)
+    console.log(req.body)
 }
 
 const update=(req,res)=>{
@@ -42,4 +43,4 @@ const destroy=(req,res)=>{
     }
 }
 
-module.exports={index, show, post, update, modify, destroy}
+module.exports={index, show, store, update, modify, destroy}

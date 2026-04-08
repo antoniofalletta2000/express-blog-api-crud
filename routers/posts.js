@@ -10,7 +10,7 @@ router.get("/", postController.index )
 router.get("/:id", postController.show )
 
 //store
-router.post("/", postController.post)
+router.post("/", postController.store)
 
 //update
 router.put("/:id", postController.update)
